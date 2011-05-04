@@ -1,0 +1,35 @@
+#Start ssh-agent, import keys because screw typing my passphrase at every shell
+if [ -f ~/.ssh/.agent ]; then
+        source ~/.ssh/.agent
+fi
+if [ ! -e $SSH_AUTH_SOCK ]; then
+        echo "agent is dead, starting a new one..."
+        ssh-agent > ~/.ssh/.agent
+        source ~/.ssh/.agent
+        ssh-add
+fi
+
+
+function pushkeys
+{
+        export pubkey="`cat ~/.ssh/id_rsa.pub`"
+        ssh $1 "mkdir .ssh; chmod 700 .ssh; touch .ssh/authorized_keys; chmod 600 .ssh/authorized_keys; echo $pubkey >> .ssh/authorized_keys"
+}
+
+function pushdotfiles
+{
+        scp ~/.vimrc $1:
+        scp ~/.screenrc $1:
+        scp ~/.bash_profile $1:
+        scp ~/.alias $1:
+        scp ~/.cshrc $1:
+        scp ~/.zshrc $1:
+}
+
+function 1stboot
+{
+        pushkeys $1
+        pushdotfiles $1
+        ssh $1
+}
+

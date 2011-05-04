@@ -1,0 +1,12 @@
+alias fail="tail -F"
+alias lh="ls -lah"
+alias ssh="ssh -A -o TCPKeepAlive=yes"
+alias sssh="ssh -o StrictHostKeyChecking=no"
+
+
+#misc useful commans
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' 
+alias random='</dev/urandom tr -dc A-Za-z0-9_ | head -c'
+alias udate='date +%s'
+alias bofh="telnet bofh.jeffballard.us 666"
+

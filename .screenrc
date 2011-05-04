@@ -1,0 +1,16 @@
+vbell off
+hardstatus alwayslastline
+caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= @%H - %LD %d %LM - %c"
+defscrollback 5000
+startup_message off
+autodetach on
+termcapinfo xterm* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+# F5 - new window, F7 - Previous, F8 - Next, F9 - Set title
+bindkey -k k7 prev
+bindkey -k k8 next
+bindkey -k k9 title
+bindkey -k k5 screen
+
+nethack on
+logfile ~/logs/screen_%Y-%m-%d_%0c
