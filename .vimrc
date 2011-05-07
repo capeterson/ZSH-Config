@@ -19,8 +19,8 @@ set backspace=indent,eol,start
 " map <silent> <F5> :!xterm -bg lightblue -fg red -geometry 172x14+100+774 -e "python % \|\| read"<CR><CR>
 
 " Don't create backupfiles everywhere, but just in ~/.backup
-" set backupdir=~/.backup
-" set dir=~/.backup
+set backupdir=~/.backup
+set dir=~/.backup
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
