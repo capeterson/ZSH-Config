@@ -1,0 +1,10 @@
+[user]
+	name = Chris Peterson
+	email = cpeterson@bluehawknetworks.com
+[alias]
+	unadd = reset HEAD
+	unpushed = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git log origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH 
+	history = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	fix = commit --amend -C HEAD
+[core]
+	excludesfile = /Users/cpeterson/.gitignore
