@@ -15,14 +15,13 @@ autoload colors
 colors
 compinit
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=300
+SAVEHIST=300
 
 #Set some evn variables
 export PAGER=less
 export EDITOR=vim
 export PATH=$PATH:/opt/local/sbin/:/opt/local/bin/:~/bin/:/opt/subversion/bin
-export NNTPSERVER='news.astound.net'
 
 source ~/.alias
 source ~/.functions
